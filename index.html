@@ -42,9 +42,9 @@
   .game-channel span{color:var(--muted);font-weight:500}
   .empty-games{padding:22px 12px;text-align:center;color:var(--muted);font-size:13px;border:1px dashed #2a3a51;border-radius:10px}
   .scores-footnote{font-size:10px;line-height:1.5;color:#7f92ab;margin:14px 2px 0}
-  @media(max-width:1250px){.dashboard{grid-template-columns:minmax(0,1fr) 290px}.grid{grid-template-columns:repeat(6,minmax(0,1fr))}}
-  @media(max-width:900px){.dashboard{grid-template-columns:1fr}.scores-sidebar{position:static;grid-row:1}.channels-area{grid-row:2}.scores-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
-  @media(max-width:560px){.scores-sidebar{padding:12px}.scores-list{grid-template-columns:1fr}.dashboard{gap:16px}}
+  @media(max-width:1250px){.dashboard{grid-template-columns:minmax(0,1fr) 290px}}
+  @media(max-width:900px){.dashboard{grid-template-columns:1fr}.scores-sidebar{position:static;grid-row:1}.channels-area{grid-row:2}.scores-list{grid-template-columns:repeat(2,minmax(0,1fr))}.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}}
+  @media(max-width:560px){.scores-sidebar{padding:12px}.scores-list{grid-template-columns:1fr}.dashboard{gap:16px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.channel{padding:10px 7px;min-height:124px}.tv-screen{height:auto;aspect-ratio:16/9;width:100%;box-sizing:border-box}.channel-label{font-size:13px}}
 
 </style>
 </head>
