@@ -10,13 +10,14 @@
   header{position:sticky;top:0;z-index:2;display:flex;align-items:center;gap:18px;padding:18px 24px;background:#09111feF;border-bottom:1px solid #1b2a40;backdrop-filter:blur(14px)}
   .logo{width:42px;height:42px;display:grid;place-items:center;background:#102d51;border-radius:12px;color:#54a8ff;font-size:23px} h1{font-size:24px;margin:0;letter-spacing:-.5px} .sub{color:var(--muted);font-size:13px;margin-top:3px}.header-spacer{flex:1}
   #search{width:min(340px,38vw);padding:12px 14px;background:#0a1322;border:1px solid var(--line);border-radius:10px;color:var(--text);font:inherit;outline:none} #search:focus{border-color:var(--blue)}
-  main{max-width:1700px;margin:auto;padding:20px 24px 40px}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;color:var(--muted);font-size:13px}.count{color:#dce7f8}
+  main{max-width:1700px;margin:auto;padding:20px 24px 40px}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;color:var(--muted);font-size:13px}.count{color:#dce7f8}.channel-filter{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.channel-filter label{color:var(--muted)}.channel-filter select{background:#0b1422;color:#eaf1fb;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font:inherit}.channel-filter select:focus{outline:2px solid #3b82f6;outline-offset:2px}
   .grid{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:12px}.channel{min-width:0;position:relative;text-align:left;padding:12px 13px;min-height:65px;border:1px solid transparent;border-radius:10px;background:linear-gradient(135deg,#111d2e,#0d1625);color:var(--text);cursor:pointer;transition:border-color .15s,transform .15s,background .15s}.channel:hover{border-color:#31577f;transform:translateY(-1px)}.channel.active{border:1px solid var(--blue);box-shadow:inset 0 0 0 1px #1687ff38;background:#102746}.num{font-size:18px;font-weight:650;display:block}.channel-label{font-size:11px;color:var(--muted)}.play{position:absolute;right:12px;top:21px;color:#91a9c8;font-size:13px}
   .empty{display:none;padding:40px;text-align:center;color:var(--muted)}
+  .channel-group{margin-bottom:26px}.channel-group-title{font-size:16px;font-weight:700;letter-spacing:-.2px;margin:0 0 12px;padding-bottom:9px;border-bottom:1px solid var(--line);color:#dce7f8}.channel-group[hidden]{display:none}
   .overlay{position:fixed;inset:0;z-index:5;background:#020610d9;display:none;align-items:center;justify-content:center;padding:20px}.overlay.open{display:flex}.modal{width:min(900px,100%);max-height:95vh;overflow:auto;background:#091321;border:1px solid #33465f;border-radius:16px;box-shadow:0 25px 90px #000a}.modal-head{display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid #203148}.modal-head strong{font-size:18px}.live{font-size:11px;border-radius:20px;background:#0d65ca;padding:4px 9px}.position{margin-left:auto;color:#c4d1e4;font-size:13px}.close{border:0;background:transparent;color:#aabbd2;font-size:27px;cursor:pointer;margin-left:8px}.player-wrap{background:#000;aspect-ratio:16/9;display:grid;place-items:center}.player-wrap iframe{width:100%;height:100%;border:0}.placeholder{padding:24px;text-align:center;color:#b7c6dc;max-width:500px}.placeholder b{display:block;color:#fff;font-size:20px;margin-bottom:8px}.placeholder code{color:#8fc5ff;overflow-wrap:anywhere}.modal-controls{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;gap:12px;padding:14px 18px}.navbtn{display:flex;align-items:center;justify-content:center;gap:10px;background:#0c1728;border:1px solid #2b3d56;border-radius:12px;color:white;padding:11px 12px;cursor:pointer}.navbtn:hover{border-color:#4389ce}.navbtn small{display:block;color:var(--muted);font-size:11px}.navbtn:disabled{opacity:.35;cursor:not-allowed}.progress{text-align:center;font-size:13px;color:#dce7f8}.bar{height:4px;border-radius:4px;background:#1c2a40;margin:9px auto 0;max-width:160px;overflow:hidden}.bar span{display:block;height:100%;background:var(--blue)}.hint{text-align:center;color:#8094af;font-size:11px;padding:0 12px 14px}
   @media(max-width:1250px){.grid{grid-template-columns:repeat(6,minmax(0,1fr))}}@media(max-width:800px){header{padding:14px;flex-wrap:wrap}.header-spacer{display:none}#search{width:100%;order:4}.grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}main{padding:14px}.channel{padding:10px;min-height:60px}.modal-controls{grid-template-columns:1fr 1fr}.progress{grid-column:1/-1;grid-row:1}.navbtn{grid-row:2}.modal-head{padding:12px}.overlay{padding:8px}}@media(max-width:430px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}h1{font-size:20px}}
 
-  /* Dashboard + live NBA/NFL scoreboard */
+  /* Dashboard + live NBA/NFL/MLB/NHL scoreboard */
   .dashboard{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:22px;align-items:start}
   .channels-area{min-width:0}
   .scores-sidebar{position:sticky;top:96px;min-width:0;background:linear-gradient(145deg,#0e1727,#0a1321);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:0 12px 35px #0002}
@@ -25,7 +26,7 @@
   .scores-heading p{font-size:12px;color:var(--muted);margin:4px 0 0}
   .refresh-btn{width:36px;height:36px;display:grid;place-items:center;border:1px solid var(--line);border-radius:9px;background:#111e31;color:var(--text);font-size:23px;cursor:pointer}
   .refresh-btn:hover{border-color:var(--blue)}.refresh-btn:disabled{opacity:.5;cursor:wait}
-  .score-tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:4px;background:#080f1b;border:1px solid #1d2b40;border-radius:10px;margin-bottom:12px}
+  .score-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;padding:4px;background:#080f1b;border:1px solid #1d2b40;border-radius:10px;margin-bottom:12px}
   .score-tab{padding:8px;border:0;border-radius:7px;background:transparent;color:var(--muted);font:inherit;font-size:13px;font-weight:700;cursor:pointer}
   .score-tab.selected{background:#16345a;color:#fff;box-shadow:inset 0 0 0 1px #2b5c91}
   .scores-status{font-size:12px;color:var(--muted);padding:10px 2px}.scores-status.error{color:#ffb4b4}
@@ -37,6 +38,8 @@
   .team-name{font-size:13px;font-weight:650;overflow-wrap:anywhere}.team-abbr{color:var(--muted);font-size:10px;margin-left:5px;font-weight:500}
   .team-score{font-size:16px;font-weight:750;font-variant-numeric:tabular-nums}
   .game-bottom{font-size:11px;color:var(--muted);border-top:1px solid #1b2a3d;margin-top:7px;padding-top:8px}
+  .game-channel{font-size:12px;color:#b9d9ff;margin-top:6px;font-weight:650}
+  .game-channel span{color:var(--muted);font-weight:500}
   .empty-games{padding:22px 12px;text-align:center;color:var(--muted);font-size:13px;border:1px dashed #2a3a51;border-radius:10px}
   .scores-footnote{font-size:10px;line-height:1.5;color:#7f92ab;margin:14px 2px 0}
   @media(max-width:1250px){.dashboard{grid-template-columns:minmax(0,1fr) 290px}.grid{grid-template-columns:repeat(6,minmax(0,1fr))}}
@@ -48,24 +51,33 @@
 <body>
 <header>
   <div class="logo" aria-hidden="true">▣</div>
-  <div><h1>NBA/NFL Channels</h1><div class="sub">100 channels · Look for your game · Channel labels coming soon</div></div>
+  <div><h1>Sport Channels</h1><div class="sub">100 channels · Labeled channels first · More channels below</div></div>
   <div class="header-spacer"></div>
   <input id="search" type="search" placeholder="Search channels…" aria-label="Search channels" />
 </header>
 <main class="dashboard">
   <section class="channels-area" aria-label="Sports channels">
-    <div class="toolbar"><span>Choose a channel</span><span class="count" id="count">100 channels</span></div>
-    <section class="grid" id="grid" aria-label="Channel list"></section>
+    <div class="toolbar"><span>Choose a channel</span><div class="channel-filter"><label for="channel-league-filter">Show channels for</label><select id="channel-league-filter" aria-label="Filter channels by sports league"><option value="all">All leagues</option><option value="nba">NBA</option><option value="nfl">NFL</option><option value="mlb">MLB</option><option value="nhl">NHL</option></select><span class="count" id="count">100 channels</span></div></div>
+    <section class="channel-group" id="labeled-section" aria-label="Labeled channels">
+      <h2 class="channel-group-title" id="labeled-title">Labeled Channels</h2>
+      <section class="grid" id="labeled-grid" aria-label="Labeled channel list"></section>
+    </section>
+    <section class="channel-group" id="other-section" aria-label="Other channels">
+      <h2 class="channel-group-title">Other Channels</h2>
+      <section class="grid" id="other-grid" aria-label="Other channel list"></section>
+    </section>
     <div class="empty" id="empty">No channels match your search.</div>
   </section>
   <aside class="scores-sidebar" aria-label="Today's sports scores">
     <div class="scores-heading">
-      <div><h2>Today's Scores</h2><p id="scores-date">NBA &amp; NFL · Local date</p></div>
+      <div><h2>Today's Scores</h2><p id="scores-date">NBA · Local date</p></div>
       <button type="button" id="refresh-scores" class="refresh-btn" aria-label="Refresh scores" title="Refresh scores">↻</button>
     </div>
     <div class="score-tabs" role="tablist" aria-label="League">
       <button type="button" class="score-tab selected" data-league="nba" role="tab" aria-selected="true">NBA</button>
       <button type="button" class="score-tab" data-league="nfl" role="tab" aria-selected="false">NFL</button>
+      <button type="button" class="score-tab" data-league="mlb" role="tab" aria-selected="false">MLB</button>
+      <button type="button" class="score-tab" data-league="nhl" role="tab" aria-selected="false">NHL</button>
     </div>
     <div id="scores-status" class="scores-status" aria-live="polite">Loading today's scores…</div>
     <section id="scores-list" class="scores-list" aria-label="Games"></section>
@@ -190,21 +202,37 @@ const CHANNEL_URLS = {
   100: 'https://streamec.st/stream-east/ch100.php'
 };
 const TOTAL = 100;
-const grid = document.getElementById('grid');
+const CHANNEL_LABELS = {
+  30: 'NFL Net',
+  32: 'CBS', 33: 'CBS', 34: 'CBS',
+  35: 'FOX', 36: 'FOX', 37: 'FOX', 38: 'FOX', 39: 'FOX', 40: 'FOX', 41: 'FOX',
+  42: 'Redzone',
+  43: 'NFL Net',
+  47: 'TNT2',
+  49: 'Sky Sports',
+  67: 'NBC',
+  94: 'CW',
+  95: 'ESPN'
+};
+const labeledGrid = document.getElementById('labeled-grid');
+const otherGrid = document.getElementById('other-grid');
 const search = document.getElementById('search');
 const overlay = document.getElementById('overlay');
 const playerWrap = document.getElementById('playerWrap');
 let current = 1;
 const cards = new Map();
+let activeChannelLeague = 'all';
 
 for (let n = 1; n <= TOTAL; n++) {
   const button = document.createElement('button');
   button.className = 'channel';
   button.type = 'button';
   button.dataset.channel = String(n);
-  button.innerHTML = `<span class="num">${n}</span><span class="channel-label">Channel</span><span class="play" aria-hidden="true">▶</span>`;
+  const label = CHANNEL_LABELS[n] || 'Channel';
+  button.innerHTML = `<span class="num">${n}</span><span class="channel-label">${label}</span><span class="play" aria-hidden="true">▶</span>`;
+  button.setAttribute('aria-label', `Channel ${n}${CHANNEL_LABELS[n] ? ': ' + CHANNEL_LABELS[n] : ''}`);
   button.addEventListener('click', () => openChannelInNewWindow(n));
-  grid.appendChild(button);
+  (CHANNEL_LABELS[n] ? labeledGrid : otherGrid).appendChild(button);
   cards.set(n, button);
 }
 function openChannelInNewWindow(n) {
@@ -258,23 +286,60 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight') { e.preventDefault(); cycle(1); }
   if (e.key === 'Escape') closePlayer();
 });
-search.addEventListener('input', () => {
-  const q = search.value.trim().toLowerCase(); let shown = 0;
-  for (const [n, card] of cards) { const match = `channel ${n}`.includes(q) || String(n).includes(q); card.hidden = !match; if (match) shown++; }
+function normalizeNetwork(text) {
+  const s = String(text || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+  if (/\bnfl\s*(network|net)\b/.test(s)) return 'NFL Net';
+  if (/red ?zone|redzone/.test(s)) return 'Redzone';
+  if (/\bfox\b/.test(s)) return 'FOX';
+  if (/\bcbs\b/.test(s)) return 'CBS';
+  if (/\b espn\b|^espn\b/.test(s)) return 'ESPN';
+  if (/\bnbc\b/.test(s)) return 'NBC';
+  if (/\btnt\b/.test(s)) return 'TNT2';
+  if (/\bcw\b/.test(s)) return 'CW';
+  if (/sky sports/.test(s)) return 'Sky Sports';
+  return null;
+}
+function networksForLeague(league) {
+  const games = scoreboardData[league] || [];
+  return new Set(games.flatMap(game => (game.channels || []).map(normalizeNetwork).filter(Boolean)));
+}
+function filterChannels() {
+  const q = search.value.trim().toLowerCase();
+  const leagueNetworks = activeChannelLeague === 'all' ? null : networksForLeague(activeChannelLeague);
+  let shown = 0, labeledShown = 0, otherShown = 0;
+  for (const [n, card] of cards) {
+    const rawLabel = CHANNEL_LABELS[n] || '';
+    const label = rawLabel.toLowerCase();
+    const textMatch = `channel ${n}`.includes(q) || String(n).includes(q) || label.includes(q);
+    const leagueMatch = activeChannelLeague === 'all' || (rawLabel && leagueNetworks.has(rawLabel));
+    const match = textMatch && leagueMatch;
+    card.hidden = !match;
+    if (match) {
+      shown++;
+      if (rawLabel) labeledShown++; else otherShown++;
+    }
+  }
+  const leagueName = activeChannelLeague === 'all' ? '' : activeChannelLeague.toUpperCase();
+  document.getElementById('labeled-title').textContent = leagueName ? `${leagueName} Channels Currently Listed on Today's Scores` : 'Labeled Channels';
   document.getElementById('count').textContent = `${shown} channel${shown === 1 ? '' : 's'}`;
+  document.getElementById('labeled-section').hidden = labeledShown === 0;
+  document.getElementById('other-section').hidden = otherShown === 0;
   document.getElementById('empty').style.display = shown ? 'none' : 'block';
-});
+  document.getElementById('empty').textContent = activeChannelLeague === 'all' ? 'No channels match your search.' : `No labeled channels match ${leagueName} games listed today. Try another league or All leagues.`;
+}
+search.addEventListener('input', filterChannels);
+document.getElementById('channel-league-filter').addEventListener('change', e => { activeChannelLeague = e.target.value; filterChannels(); });
 
 
-// ESPN scoreboard data for the user's local calendar date.
+// ESPN scoreboard data for the user's local calendar date across NBA, NFL, MLB, and NHL.
 const scoresList = document.getElementById('scores-list');
 const scoresStatus = document.getElementById('scores-status');
 const scoresDate = document.getElementById('scores-date');
 const refreshScoresButton = document.getElementById('refresh-scores');
 const scoreTabs = [...document.querySelectorAll('.score-tab')];
 let activeLeague = 'nba';
-let scoreboardData = { nba: [], nfl: [] };
-let scoreboardErrors = { nba: false, nfl: false };
+let scoreboardData = { nba: [], nfl: [], mlb: [], nhl: [] };
+let scoreboardErrors = { nba: false, nfl: false, mlb: false, nhl: false };
 let scoreboardLastUpdated = null;
 
 function localDateKey(date = new Date()) {
@@ -308,11 +373,19 @@ function normalizeEvent(event) {
   const home = competitors.find(t => t.homeAway === 'home') || competitors[0] || {};
   const away = competitors.find(t => t.homeAway === 'away') || competitors[1] || {};
   const status = getEventState(event);
+  const broadcastEntries = competition.broadcasts || event.broadcasts || [];
+  const channelNames = [...new Set(broadcastEntries.flatMap(item => {
+    if (typeof item === 'string') return [item];
+    const names = Array.isArray(item.names) ? item.names : [];
+    const mediaName = item.media?.shortName || item.media?.name || item.shortName || item.name;
+    return [...names, ...(mediaName ? [mediaName] : [])];
+  }).map(name => String(name).trim()).filter(Boolean))];
   return {
     id:event.id,
     name:event.name || event.shortName || 'Game',
     home:{name:home.team?.displayName || home.team?.name || 'Home',abbr:home.team?.abbreviation || '',score:home.score ?? '—'},
     away:{name:away.team?.displayName || away.team?.name || 'Away',abbr:away.team?.abbreviation || '',score:away.score ?? '—'},
+    channels:channelNames,
     state:status.state,detail:status.detail,completed:status.completed,
     time:formatGameTime(event),date:event.date || ''
   };
@@ -350,12 +423,14 @@ function renderScores() {
       <div class="game-topline"><span>${safeText(game.name)}</span><span class="${stateClass}">${safeText(stateLabel)}</span></div>
       <div class="team-row"><div class="team-name">${safeText(game.away.name)}<span class="team-abbr">${safeText(game.away.abbr)}</span></div><div class="team-score">${safeText(awayScore)}</div></div>
       <div class="team-row"><div class="team-name">${safeText(game.home.name)}<span class="team-abbr">${safeText(game.home.abbr)}</span></div><div class="team-score">${safeText(homeScore)}</div></div>
+      <div class="game-channel">Channel: <span>${safeText(game.channels?.length ? game.channels.join(', ') : 'Not listed by ESPN')}</span></div>
       <div class="game-bottom">${game.completed ? 'Final' : live ? 'Live game' : `Scheduled for ${safeText(game.time)}`}</div>
     </article>`;
   }).join('');
 }
 async function loadLeagueScores(league) {
-  const sport = league === 'nba' ? 'basketball/nba' : 'football/nfl';
+  const sportPaths = { nba: 'basketball/nba', nfl: 'football/nfl', mlb: 'baseball/mlb', nhl: 'hockey/nhl' };
+  const sport = sportPaths[league];
   const url = `https://site.api.espn.com/apis/site/v2/sports/${sport}/scoreboard?dates=${localDateKey()}`;
   try {
     const response = await fetch(url,{cache:'no-store'});
@@ -363,8 +438,9 @@ async function loadLeagueScores(league) {
     const data = await response.json();
     const events = Array.isArray(data.events) ? data.events : [];
     // Filter by local date because league endpoints may return a broader date range.
-    scoreboardData[league] = events.filter(event => eventLocalDate(event) === localDateKey()).map(normalizeEvent).sort((a,b) => new Date(a.date)-new Date(b.date));
+    scoreboardData[league] = events.filter(event => eventLocalDate(event) === localDateKey()).map(normalizeEvent).sort((a,b) => Number(a.completed) - Number(b.completed) || new Date(a.date)-new Date(b.date));
     scoreboardErrors[league] = false;
+    filterChannels();
   } catch (error) {
     console.warn(`Could not load ${league.toUpperCase()} scores`,error);
     scoreboardErrors[league] = true;
@@ -379,7 +455,7 @@ async function refreshScores() {
   scoresStatus.className = 'scores-status';
   scoresStatus.textContent = 'Refreshing scores…';
   try {
-    await Promise.all([loadLeagueScores('nba'),loadLeagueScores('nfl')]);
+    await Promise.all(['nba','nfl','mlb','nhl'].map(loadLeagueScores));
     scoreboardLastUpdated = new Date();
     renderScores();
   } finally {
