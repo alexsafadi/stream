@@ -15,6 +15,34 @@
   .empty{display:none;padding:40px;text-align:center;color:var(--muted)}
   .overlay{position:fixed;inset:0;z-index:5;background:#020610d9;display:none;align-items:center;justify-content:center;padding:20px}.overlay.open{display:flex}.modal{width:min(900px,100%);max-height:95vh;overflow:auto;background:#091321;border:1px solid #33465f;border-radius:16px;box-shadow:0 25px 90px #000a}.modal-head{display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid #203148}.modal-head strong{font-size:18px}.live{font-size:11px;border-radius:20px;background:#0d65ca;padding:4px 9px}.position{margin-left:auto;color:#c4d1e4;font-size:13px}.close{border:0;background:transparent;color:#aabbd2;font-size:27px;cursor:pointer;margin-left:8px}.player-wrap{background:#000;aspect-ratio:16/9;display:grid;place-items:center}.player-wrap iframe{width:100%;height:100%;border:0}.placeholder{padding:24px;text-align:center;color:#b7c6dc;max-width:500px}.placeholder b{display:block;color:#fff;font-size:20px;margin-bottom:8px}.placeholder code{color:#8fc5ff;overflow-wrap:anywhere}.modal-controls{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;gap:12px;padding:14px 18px}.navbtn{display:flex;align-items:center;justify-content:center;gap:10px;background:#0c1728;border:1px solid #2b3d56;border-radius:12px;color:white;padding:11px 12px;cursor:pointer}.navbtn:hover{border-color:#4389ce}.navbtn small{display:block;color:var(--muted);font-size:11px}.navbtn:disabled{opacity:.35;cursor:not-allowed}.progress{text-align:center;font-size:13px;color:#dce7f8}.bar{height:4px;border-radius:4px;background:#1c2a40;margin:9px auto 0;max-width:160px;overflow:hidden}.bar span{display:block;height:100%;background:var(--blue)}.hint{text-align:center;color:#8094af;font-size:11px;padding:0 12px 14px}
   @media(max-width:1250px){.grid{grid-template-columns:repeat(6,minmax(0,1fr))}}@media(max-width:800px){header{padding:14px;flex-wrap:wrap}.header-spacer{display:none}#search{width:100%;order:4}.grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}main{padding:14px}.channel{padding:10px;min-height:60px}.modal-controls{grid-template-columns:1fr 1fr}.progress{grid-column:1/-1;grid-row:1}.navbtn{grid-row:2}.modal-head{padding:12px}.overlay{padding:8px}}@media(max-width:430px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}h1{font-size:20px}}
+
+  /* Dashboard + live NBA/NFL scoreboard */
+  .dashboard{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:22px;align-items:start}
+  .channels-area{min-width:0}
+  .scores-sidebar{position:sticky;top:96px;min-width:0;background:linear-gradient(145deg,#0e1727,#0a1321);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:0 12px 35px #0002}
+  .scores-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+  .scores-heading h2{font-size:19px;margin:0;letter-spacing:-.3px}
+  .scores-heading p{font-size:12px;color:var(--muted);margin:4px 0 0}
+  .refresh-btn{width:36px;height:36px;display:grid;place-items:center;border:1px solid var(--line);border-radius:9px;background:#111e31;color:var(--text);font-size:23px;cursor:pointer}
+  .refresh-btn:hover{border-color:var(--blue)}.refresh-btn:disabled{opacity:.5;cursor:wait}
+  .score-tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:4px;background:#080f1b;border:1px solid #1d2b40;border-radius:10px;margin-bottom:12px}
+  .score-tab{padding:8px;border:0;border-radius:7px;background:transparent;color:var(--muted);font:inherit;font-size:13px;font-weight:700;cursor:pointer}
+  .score-tab.selected{background:#16345a;color:#fff;box-shadow:inset 0 0 0 1px #2b5c91}
+  .scores-status{font-size:12px;color:var(--muted);padding:10px 2px}.scores-status.error{color:#ffb4b4}
+  .scores-list{display:grid;gap:10px}
+  .game-card{padding:12px;border:1px solid #22334a;border-radius:11px;background:#0b1422}
+  .game-topline{display:flex;justify-content:space-between;align-items:center;gap:8px;color:var(--muted);font-size:11px;margin-bottom:10px}
+  .game-state{color:#8fc5ff;font-weight:700;text-align:right}.game-state.live-state{color:#ff8585}
+  .team-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px;padding:5px 0}
+  .team-name{font-size:13px;font-weight:650;overflow-wrap:anywhere}.team-abbr{color:var(--muted);font-size:10px;margin-left:5px;font-weight:500}
+  .team-score{font-size:16px;font-weight:750;font-variant-numeric:tabular-nums}
+  .game-bottom{font-size:11px;color:var(--muted);border-top:1px solid #1b2a3d;margin-top:7px;padding-top:8px}
+  .empty-games{padding:22px 12px;text-align:center;color:var(--muted);font-size:13px;border:1px dashed #2a3a51;border-radius:10px}
+  .scores-footnote{font-size:10px;line-height:1.5;color:#7f92ab;margin:14px 2px 0}
+  @media(max-width:1250px){.dashboard{grid-template-columns:minmax(0,1fr) 290px}.grid{grid-template-columns:repeat(6,minmax(0,1fr))}}
+  @media(max-width:900px){.dashboard{grid-template-columns:1fr}.scores-sidebar{position:static;grid-row:1}.channels-area{grid-row:2}.scores-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:560px){.scores-sidebar{padding:12px}.scores-list{grid-template-columns:1fr}.dashboard{gap:16px}}
+
 </style>
 </head>
 <body>
@@ -24,10 +52,25 @@
   <div class="header-spacer"></div>
   <input id="search" type="search" placeholder="Search channels…" aria-label="Search channels" />
 </header>
-<main>
-  <div class="toolbar"><span>Choose a channel</span><span class="count" id="count">100 channels</span></div>
-  <section class="grid" id="grid" aria-label="Channel list"></section>
-  <div class="empty" id="empty">No channels match your search.</div>
+<main class="dashboard">
+  <section class="channels-area" aria-label="Sports channels">
+    <div class="toolbar"><span>Choose a channel</span><span class="count" id="count">100 channels</span></div>
+    <section class="grid" id="grid" aria-label="Channel list"></section>
+    <div class="empty" id="empty">No channels match your search.</div>
+  </section>
+  <aside class="scores-sidebar" aria-label="Today's sports scores">
+    <div class="scores-heading">
+      <div><h2>Today's Scores</h2><p id="scores-date">NBA &amp; NFL · Local date</p></div>
+      <button type="button" id="refresh-scores" class="refresh-btn" aria-label="Refresh scores" title="Refresh scores">↻</button>
+    </div>
+    <div class="score-tabs" role="tablist" aria-label="League">
+      <button type="button" class="score-tab selected" data-league="nba" role="tab" aria-selected="true">NBA</button>
+      <button type="button" class="score-tab" data-league="nfl" role="tab" aria-selected="false">NFL</button>
+    </div>
+    <div id="scores-status" class="scores-status" aria-live="polite">Loading today's scores…</div>
+    <section id="scores-list" class="scores-list" aria-label="Games"></section>
+    <p class="scores-footnote">Scores and start times provided by ESPN. Refreshes automatically every 60 seconds.</p>
+  </aside>
 </main>
 <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="Channel player">
   <section class="modal">
@@ -42,6 +85,8 @@
   </section>
 </div>
 <script>
+// TEMPLATE: Replace YOUR-AUTHORIZED-DOMAIN.example with your provider's authorized embed domain.
+// Confirm that the provider permits iframe embedding before using these URLs.
 const CHANNEL_URLS = {
   1: 'https://streamec.st/stream-east/ch1.php',
   2: 'https://streamec.st/stream-east/ch2.php',
@@ -219,6 +264,137 @@ search.addEventListener('input', () => {
   document.getElementById('count').textContent = `${shown} channel${shown === 1 ? '' : 's'}`;
   document.getElementById('empty').style.display = shown ? 'none' : 'block';
 });
+
+
+// ESPN scoreboard data for the user's local calendar date.
+const scoresList = document.getElementById('scores-list');
+const scoresStatus = document.getElementById('scores-status');
+const scoresDate = document.getElementById('scores-date');
+const refreshScoresButton = document.getElementById('refresh-scores');
+const scoreTabs = [...document.querySelectorAll('.score-tab')];
+let activeLeague = 'nba';
+let scoreboardData = { nba: [], nfl: [] };
+let scoreboardErrors = { nba: false, nfl: false };
+let scoreboardLastUpdated = null;
+
+function localDateKey(date = new Date()) {
+  return `${date.getFullYear()}${String(date.getMonth()+1).padStart(2,'0')}${String(date.getDate()).padStart(2,'0')}`;
+}
+function formatLocalDate(date = new Date()) {
+  return new Intl.DateTimeFormat(undefined,{weekday:'short',month:'short',day:'numeric'}).format(date);
+}
+function safeText(value) {
+  return String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+}
+function eventLocalDate(event) {
+  if (!event.date) return '';
+  const d = new Date(event.date);
+  return Number.isNaN(d.getTime()) ? '' : localDateKey(d);
+}
+function getEventState(event) {
+  const status = event.status || event.competitions?.[0]?.status || {};
+  const type = status.type || {};
+  return { state: type.state || '', detail: type.shortDetail || type.detail || type.description || 'Scheduled', completed: Boolean(type.completed) };
+}
+function formatGameTime(event) {
+  if (!event.date) return 'Time TBD';
+  const d = new Date(event.date);
+  if (Number.isNaN(d.getTime())) return 'Time TBD';
+  return d.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'});
+}
+function normalizeEvent(event) {
+  const competition = event.competitions?.[0] || {};
+  const competitors = competition.competitors || [];
+  const home = competitors.find(t => t.homeAway === 'home') || competitors[0] || {};
+  const away = competitors.find(t => t.homeAway === 'away') || competitors[1] || {};
+  const status = getEventState(event);
+  return {
+    id:event.id,
+    name:event.name || event.shortName || 'Game',
+    home:{name:home.team?.displayName || home.team?.name || 'Home',abbr:home.team?.abbreviation || '',score:home.score ?? '—'},
+    away:{name:away.team?.displayName || away.team?.name || 'Away',abbr:away.team?.abbreviation || '',score:away.score ?? '—'},
+    state:status.state,detail:status.detail,completed:status.completed,
+    time:formatGameTime(event),date:event.date || ''
+  };
+}
+function renderScores() {
+  const leagueLabel = activeLeague.toUpperCase();
+  scoresDate.textContent = `${leagueLabel} · ${formatLocalDate()}`;
+  scoreTabs.forEach(tab => {
+    const selected = tab.dataset.league === activeLeague;
+    tab.classList.toggle('selected',selected);
+    tab.setAttribute('aria-selected',String(selected));
+  });
+  if (scoreboardErrors[activeLeague] && !scoreboardData[activeLeague].length) {
+    scoresStatus.className = 'scores-status error';
+    scoresStatus.textContent = 'Could not load scores. Check your connection and try refreshing.';
+    scoresList.innerHTML = '';
+    return;
+  }
+  const games = scoreboardData[activeLeague] || [];
+  if (!games.length) {
+    scoresStatus.className = 'scores-status';
+    scoresStatus.textContent = scoreboardLastUpdated ? 'No games listed for today.' : 'Loading today’s scores…';
+    scoresList.innerHTML = scoreboardLastUpdated ? '<div class="empty-games">No games scheduled for today.</div>' : '';
+    return;
+  }
+  scoresStatus.className = 'scores-status';
+  scoresStatus.textContent = `${games.length} game${games.length === 1 ? '' : 's'} · Updated ${scoreboardLastUpdated ? scoreboardLastUpdated.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'}) : '—'}`;
+  scoresList.innerHTML = games.map(game => {
+    const live = game.state === 'in';
+    const stateClass = live ? 'game-state live-state' : 'game-state';
+    const stateLabel = live ? `● ${game.detail}` : game.completed ? game.detail : (game.state === 'pre' ? game.time : game.detail);
+    const awayScore = game.state === 'pre' ? '—' : game.away.score;
+    const homeScore = game.state === 'pre' ? '—' : game.home.score;
+    return `<article class="game-card">
+      <div class="game-topline"><span>${safeText(game.name)}</span><span class="${stateClass}">${safeText(stateLabel)}</span></div>
+      <div class="team-row"><div class="team-name">${safeText(game.away.name)}<span class="team-abbr">${safeText(game.away.abbr)}</span></div><div class="team-score">${safeText(awayScore)}</div></div>
+      <div class="team-row"><div class="team-name">${safeText(game.home.name)}<span class="team-abbr">${safeText(game.home.abbr)}</span></div><div class="team-score">${safeText(homeScore)}</div></div>
+      <div class="game-bottom">${game.completed ? 'Final' : live ? 'Live game' : `Scheduled for ${safeText(game.time)}`}</div>
+    </article>`;
+  }).join('');
+}
+async function loadLeagueScores(league) {
+  const sport = league === 'nba' ? 'basketball/nba' : 'football/nfl';
+  const url = `https://site.api.espn.com/apis/site/v2/sports/${sport}/scoreboard?dates=${localDateKey()}`;
+  try {
+    const response = await fetch(url,{cache:'no-store'});
+    if (!response.ok) throw new Error(`ESPN returned ${response.status}`);
+    const data = await response.json();
+    const events = Array.isArray(data.events) ? data.events : [];
+    // Filter by local date because league endpoints may return a broader date range.
+    scoreboardData[league] = events.filter(event => eventLocalDate(event) === localDateKey()).map(normalizeEvent).sort((a,b) => new Date(a.date)-new Date(b.date));
+    scoreboardErrors[league] = false;
+  } catch (error) {
+    console.warn(`Could not load ${league.toUpperCase()} scores`,error);
+    scoreboardErrors[league] = true;
+  }
+}
+let scoreRefreshInProgress = false;
+async function refreshScores() {
+  if (scoreRefreshInProgress) return;
+  scoreRefreshInProgress = true;
+  refreshScoresButton.disabled = true;
+  refreshScoresButton.textContent = '…';
+  scoresStatus.className = 'scores-status';
+  scoresStatus.textContent = 'Refreshing scores…';
+  try {
+    await Promise.all([loadLeagueScores('nba'),loadLeagueScores('nfl')]);
+    scoreboardLastUpdated = new Date();
+    renderScores();
+  } finally {
+    scoreRefreshInProgress = false;
+    refreshScoresButton.disabled = false;
+    refreshScoresButton.textContent = '↻';
+  }
+}
+scoreTabs.forEach(tab => tab.addEventListener('click',() => { activeLeague = tab.dataset.league; renderScores(); }));
+refreshScoresButton.addEventListener('click',refreshScores);
+renderScores();
+refreshScores();
+setInterval(() => { if (!document.hidden) refreshScores(); },60000);
+document.addEventListener('visibilitychange',() => { if (!document.hidden) refreshScores(); });
+
 </script>
 </body>
 </html>
