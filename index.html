@@ -12,8 +12,10 @@
   #search{width:min(340px,38vw);padding:12px 14px;background:#0a1322;border:1px solid var(--line);border-radius:10px;color:var(--text);font:inherit;outline:none} #search:focus{border-color:var(--blue)}
   main{max-width:1700px;margin:auto;padding:20px 24px 40px}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;color:var(--muted);font-size:13px}.count{color:#dce7f8}.channel-filter{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.channel-filter label{color:var(--muted)}.channel-filter select{background:#0b1422;color:#eaf1fb;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font:inherit}.channel-filter select:focus{outline:2px solid #3b82f6;outline-offset:2px}
   .grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}.channel{min-width:0;position:relative;display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center;padding:9px 8px 12px;min-height:132px;border:1px solid transparent;border-radius:10px;background:transparent;color:var(--text);cursor:pointer;transition:transform .15s,background .15s}.channel:hover{transform:translateY(-2px);background:#132239}.channel.active{background:#102746;box-shadow:inset 0 0 0 1px var(--blue)}.tv-screen{position:relative;display:grid;place-items:center;width:100%;max-width:none;height:78px;border:5px solid #3a4a61;border-radius:9px;background:radial-gradient(ellipse at 35% 25%,#1f4670,#091322 70%);box-shadow:inset 0 0 0 1px #7890ac,0 3px 0 #1b293b;}.tv-screen:after{content:"";position:absolute;bottom:-12px;left:calc(50% - 3px);width:6px;height:8px;background:#43536a;border-radius:0 0 2px 2px}.tv-screen:before{content:"";position:absolute;bottom:-14px;left:calc(50% - 15px);width:30px;height:3px;background:#43536a;border-radius:3px}.num{font-size:11px;font-weight:650;display:block;color:var(--muted);max-width:100%;overflow-wrap:anywhere;line-height:1.15}.channel-label{font-size:13px;font-weight:800;line-height:1.1;color:#f3f7ff;max-width:100%;overflow-wrap:anywhere;padding:2px; text-shadow:0 1px 8px #1687ff55}.play{display:none}
+  .backups{margin-top:22px;padding-top:14px;border-top:1px solid var(--line)}.backups-title{font-size:14px;font-weight:700;margin:0 0 10px;color:#dce7f8}.backup-buttons{display:flex;flex-wrap:wrap;gap:12px}.backup-btn[hidden]{display:none}.backup-btn{display:flex;flex-direction:column;align-items:flex-start;gap:3px;min-width:200px;padding:12px 16px;background:#0c1728;border:1px solid #2b3d56;border-radius:12px;color:var(--text);font:inherit;cursor:pointer;text-align:left}.backup-btn:hover{border-color:var(--blue);background:#132239}.backup-matchup{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:750}.backup-logos{display:flex;align-items:center;gap:6px;flex:0 0 auto}.backup-text{display:flex;flex-direction:column;gap:2px}.backup-state{font-size:11px;font-weight:700;color:#8fc5ff}.backup-state.live-state{color:#ff8585}.backup-logo{width:30px;height:30px;object-fit:contain}.backup-score{font-size:17px;font-weight:800;font-variant-numeric:tabular-nums}.backup-at{color:var(--muted);font-size:12px;font-weight:600}
+  .channel[hidden],.channel-group[hidden],.backups[hidden]{display:none!important}
   .empty{display:none;padding:40px;text-align:center;color:var(--muted)}
-  .channel-group{margin-bottom:26px}.channel-group-title{font-size:16px;font-weight:700;letter-spacing:-.2px;margin:0 0 12px;padding-bottom:9px;border-bottom:1px solid var(--line);color:#dce7f8}.channel-group[hidden]{display:none}
+  .channel-group{margin-bottom:26px}.channel-group-title[hidden],.grid[hidden]{display:none}.channel-group-title{font-size:16px;font-weight:700;letter-spacing:-.2px;margin:0 0 12px;padding-bottom:9px;border-bottom:1px solid var(--line);color:#dce7f8}.channel-group[hidden]{display:none}
   .overlay{position:fixed;inset:0;z-index:5;background:#020610d9;display:none;align-items:center;justify-content:center;padding:20px}.overlay.open{display:flex}.modal{width:min(900px,100%);max-height:95vh;overflow:auto;background:#091321;border:1px solid #33465f;border-radius:16px;box-shadow:0 25px 90px #000a}.modal-head{display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid #203148}.modal-head strong{font-size:18px}.live{font-size:11px;border-radius:20px;background:#0d65ca;padding:4px 9px}.position{margin-left:auto;color:#c4d1e4;font-size:13px}.close{border:0;background:transparent;color:#aabbd2;font-size:27px;cursor:pointer;margin-left:8px}.player-wrap{background:#000;aspect-ratio:16/9;display:grid;place-items:center}.player-wrap iframe{width:100%;height:100%;border:0}.placeholder{padding:24px;text-align:center;color:#b7c6dc;max-width:500px}.placeholder b{display:block;color:#fff;font-size:20px;margin-bottom:8px}.placeholder code{color:#8fc5ff;overflow-wrap:anywhere}.modal-controls{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;gap:12px;padding:14px 18px}.navbtn{display:flex;align-items:center;justify-content:center;gap:10px;background:#0c1728;border:1px solid #2b3d56;border-radius:12px;color:white;padding:11px 12px;cursor:pointer}.navbtn:hover{border-color:#4389ce}.navbtn small{display:block;color:var(--muted);font-size:11px}.navbtn:disabled{opacity:.35;cursor:not-allowed}.progress{text-align:center;font-size:13px;color:#dce7f8}.bar{height:4px;border-radius:4px;background:#1c2a40;margin:9px auto 0;max-width:160px;overflow:hidden}.bar span{display:block;height:100%;background:var(--blue)}.hint{text-align:center;color:#8094af;font-size:11px;padding:0 12px 14px}
   @media(max-width:1250px){.grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}}@media(max-width:800px){header{padding:14px;flex-wrap:wrap}.header-spacer{display:none}#search{width:100%;order:4}.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}main{padding:14px}.channel{padding:10px 8px;min-height:112px;gap:8px}.tv-screen{max-width:none;width:100%;height:70px}.channel-label{font-size:12px}.modal-controls{grid-template-columns:1fr 1fr}.progress{grid-column:1/-1;grid-row:1}.navbtn{grid-row:2}.modal-head{padding:12px}.overlay{padding:8px}}@media(max-width:560px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.channel{min-height:118px;padding:10px 8px}.tv-screen{height:74px}.channel-label{font-size:13px}h1{font-size:20px}.dashboard{gap:14px}}
 
@@ -63,8 +65,12 @@
       <section class="grid" id="labeled-grid" aria-label="Labeled channel list"></section>
     </section>
     <section class="channel-group" id="other-section" aria-label="Other channels">
-      <h2 class="channel-group-title">Other Channels</h2>
+      <h2 class="channel-group-title" id="other-title">Other Channels</h2>
       <section class="grid" id="other-grid" aria-label="Other channel list"></section>
+      <div class="backups" id="backups" aria-label="Backup Streams with ads">
+        <h3 class="backups-title">Backup Streams with ads</h3>
+        <div class="backup-buttons" id="backup-buttons"></div>
+      </div>
     </section>
     <div class="empty" id="empty">No channels match your search.</div>
   </section>
@@ -334,10 +340,62 @@ function filterChannels() {
   document.getElementById('labeled-title').textContent = leagueName ? `${leagueName} Channels Currently Listed on Today's Scores` : 'Labeled Channels';
   document.getElementById('count').textContent = `${shown} channel${shown === 1 ? '' : 's'}`;
   document.getElementById('labeled-section').hidden = labeledShown === 0;
-  document.getElementById('other-section').hidden = otherShown === 0;
-  document.getElementById('empty').style.display = shown ? 'none' : 'block';
+  applyBackups();
+  const backupsShown = backupsHaveGames;
+  document.getElementById('backups').hidden = !backupsShown;
+  document.getElementById('other-section').hidden = otherShown === 0 && !backupsShown;
+  document.getElementById('other-title').hidden = otherShown === 0;
+  document.getElementById('other-grid').hidden = otherShown === 0;
+  document.getElementById('empty').style.display = (shown || backupsShown) ? 'none' : 'block';
   document.getElementById('empty').textContent = activeChannelLeague === 'all' ? 'No channels match your search.' : `No labeled channels match ${leagueName} games listed today. Try another league or All leagues.`;
 }
+const BACKUP_TEAMS = {
+  nba: {ATL:'hawks', BOS:'celtics', BKN:'nets', CHA:'hornets', CHI:'bulls', CLE:'cavaliers', DAL:'mavericks', DEN:'nuggets', DET:'pistons', GS:'warriors', HOU:'rockets', IND:'pacers', LAC:'clippers', LAL:'lakers', MEM:'grizzlies', MIA:'heat', MIL:'bucks', MIN:'timberwolves', NO:'pelicans', NY:'knicks', OKC:'thunder', ORL:'magic', PHI:'76ers', PHX:'suns', POR:'trailblazers', SAC:'kings', SA:'spurs', TOR:'raptors', UTAH:'jazz', WSH:'wizards'},
+  nfl: {ARI:'cardinals', ATL:'falcons', BAL:'ravens', BUF:'bills', CAR:'panthers', CHI:'bears', CIN:'bengals', CLE:'browns', DAL:'cowboys', DEN:'broncos', DET:'lions', GB:'packers', HOU:'texans', IND:'colts', JAX:'jaguars', KC:'chiefs', LV:'raiders', LAC:'chargers', LAR:'rams', MIA:'dolphins', MIN:'vikings', NE:'patriots', NO:'saints', NYG:'giants', NYJ:'jets', PHI:'eagles', PIT:'steelers', SF:'49ers', SEA:'seahawks', TB:'buccaneers', TEN:'titans', WSH:'commanders'}
+};
+const backupBox = document.getElementById('backup-buttons');
+for (const [league, teams] of Object.entries(BACKUP_TEAMS)) {
+  for (const [abbr, slug] of Object.entries(teams)) {
+    const btn = document.createElement('button');
+    btn.type = 'button'; btn.className = 'backup-btn'; btn.dataset.abbr = abbr; btn.dataset.league = league; btn.dataset.slug = slug;
+    btn.dataset.url = `https://edgesports.cfd/${league}/${slug}.html`;
+    btn.hidden = true;
+    btn.innerHTML = '<span class="backup-matchup"></span>';
+    backupBox.appendChild(btn);
+  }
+}
+let backupsHaveGames = false;
+// Shows a backup button only when its team has a game today, the league filter allows it and the search matches.
+// Live games first, then by start time.
+function applyBackups() {
+  const q = search.value.trim().toLowerCase();
+  const entries = [];
+  for (const btn of document.querySelectorAll('.backup-btn')) {
+    const league = btn.dataset.league, abbr = btn.dataset.abbr;
+    // Only the away team's stream is shown for each game.
+    const game = (scoreboardData[league] || []).find(g => g.away.abbr === abbr);
+    const live = !!game && game.state === 'in';
+    const text = game ? `${game.away.name} @ ${game.home.name}` : '';
+    const stateText = !game ? '' : live ? `● ${game.detail}` : game.completed ? 'Final' : game.time;
+    const leagueOk = activeChannelLeague === 'all' || activeChannelLeague === league;
+    const searchOk = !q || `${text} ${btn.dataset.slug} ${league}`.toLowerCase().includes(q);
+    const hideFinal = !!game && game.completed && league === 'nfl';
+    btn.hidden = !(game && leagueOk && searchOk) || hideFinal;
+    if (game) {
+      const sc = t => game.state === 'pre' ? '' : `<span class="backup-score">${safeText(t.score)}</span>`;
+      const logo = t => t.logo ? `<img class="backup-logo" src="${safeText(t.logo)}" alt="" referrerpolicy="no-referrer" onerror="this.style.display='none'">` : '';
+      btn.querySelector('.backup-matchup').innerHTML = `<span class="backup-logos">${logo(game.away)}${sc(game.away)}<span class="backup-at">@</span>${logo(game.home)}${sc(game.home)}</span><span class="backup-text">${safeText(text)}<span class="backup-state${live ? ' live-state' : ''}">${safeText(stateText)}</span></span>`;
+      if (!btn.hidden) entries.push({ btn, live, start: new Date(game.date).getTime() || 0 });
+    }
+  }
+  entries.sort((a, b) => Number(b.live) - Number(a.live) || a.start - b.start);
+  for (const { btn } of entries) backupBox.appendChild(btn);
+  backupsHaveGames = entries.length > 0;
+}
+function updateBackups() { filterChannels(); }
+document.querySelectorAll('.backup-btn').forEach(btn => btn.addEventListener('click', () => {
+  window.open(btn.dataset.url, `backup-${btn.dataset.abbr}`, 'popup,width=1100,height=720,resizable=yes,scrollbars=yes');
+}));
 search.addEventListener('input', filterChannels);
 document.getElementById('channel-league-filter').addEventListener('change', e => { activeChannelLeague = e.target.value; filterChannels(); });
 
@@ -478,6 +536,7 @@ async function refreshScores() {
     await Promise.all(['nba','nfl','mlb','nhl'].map(loadLeagueScores));
     scoreboardLastUpdated = new Date();
     renderScores();
+    updateBackups();
   } finally {
     scoreRefreshInProgress = false;
     refreshScoresButton.disabled = false;
