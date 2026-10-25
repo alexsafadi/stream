@@ -300,8 +300,16 @@ function normalizeNetwork(text) {
   return null;
 }
 function networksForLeague(league) {
-  const games = scoreboardData[league] || [];
-  return new Set(games.flatMap(game => (game.channels || []).map(normalizeNetwork).filter(Boolean)));
+  const now = Date.now();
+  const tenMinutes = 10 * 60 * 1000;
+  const eligibleGames = (scoreboardData[league] || []).filter(game => {
+    // Only group a channel under a league shortly before kickoff, or while the game is live.
+    if (game.completed) return false;
+    if (game.state === 'in') return true;
+    const start = game.date ? new Date(game.date).getTime() : NaN;
+    return Number.isFinite(start) && start >= now && start - now <= tenMinutes;
+  });
+  return new Set(eligibleGames.flatMap(game => (game.channels || []).map(normalizeNetwork).filter(Boolean)));
 }
 function filterChannels() {
   const q = search.value.trim().toLowerCase();
